@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "My Personal Library"
 include ':app'
+include ':backend'
+include ':core'
