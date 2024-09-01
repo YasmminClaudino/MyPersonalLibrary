@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -52,6 +53,7 @@ dependencies {
 
     implementation project(':backend')
     implementation project(':core')
+    implementation project(':dao')
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
@@ -60,16 +62,15 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.navigation.fragment.ktx
     implementation libs.androidx.navigation.ui.ktx
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
     implementation libs.koin.android
     implementation libs.retrofit
     implementation libs.converter.gson
-
     implementation libs.glide
 
+    implementation libs.androidx.room.ktx
 
-
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
 
 }
