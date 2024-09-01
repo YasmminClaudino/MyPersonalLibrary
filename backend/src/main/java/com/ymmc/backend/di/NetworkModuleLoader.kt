@@ -14,18 +14,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NetworkModuleLoader : ModuleLoader {
 
     private val networkModule = module {
-        single { buildRetrofit() }
+        single {  Retrofit.Builder()
+            .baseUrl("https://www.googleapis.com/books/v1/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        }
         single { get<Retrofit>().create(ApiService::class.java) }
 
         single<BookRepository> { BookRepositoryImpl(get()) }
         single<BookRepositoryDataSource> { BookRepositoryDataSourceImpl(get()) }
-    }
-
-    private fun buildRetrofit() {
-        Retrofit.Builder()
-            .baseUrl("https://www.googleapis.com/books/v1/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
     }
 
     override fun load() {
