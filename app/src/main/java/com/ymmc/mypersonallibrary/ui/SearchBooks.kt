@@ -7,14 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ymmc.backend.network.data.model.BookResponse
 import com.ymmc.mypersonallibrary.data.model.Book
-import com.ymmc.mypersonallibrary.databinding.ActivityMainBinding
+import com.ymmc.mypersonallibrary.databinding.ActivitySearchBinding
 import com.ymmc.mypersonallibrary.ui.adapter.BookAdapter
 import com.ymmc.mypersonallibrary.ui.viewmodel.BookListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
+class SearchBooks : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivitySearchBinding
 
     private val viewModel: BookListViewModel by viewModel()
     private val books = mutableListOf<Book>()
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initRecyclerLayout()
@@ -75,6 +75,6 @@ class MainActivity : AppCompatActivity() {
 
 
     companion object {
-        private const val TAG = "yaya"
+        private const val TAG = "SearchBooks"
     }
 }

@@ -1,6 +1,5 @@
 package com.ymmc.backend.network.data.source
 
-import android.util.Log
 import com.ymmc.backend.network.ApiService
 import com.ymmc.backend.network.data.model.BookResponse
 
