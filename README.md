@@ -30,7 +30,7 @@ Currently, our app looks like this, but we are working to improve our prototype.
 
    <img src="dummy_login.png" alt="Login Screen" title="Login Screen" width="300"/>
 
-   - Users can enter their username and password, with an option to stay logged in for convenience.
+   - Users can enter their username and password, with an option to stay logged in for convenience using SharedPreference.
 
 2. **Search Books**
 
